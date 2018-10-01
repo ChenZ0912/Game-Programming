@@ -20,11 +20,11 @@
 		6DEF23C11B96CC2600BCE792 /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF23BB1B96CC2600BCE792 /* fragment.glsl */; };
 		6DEF23C31B96CC2600BCE792 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */; };
 		6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF23C01B96CC2600BCE792 /* vertex.glsl */; };
-		8C43EBB12161ACA3004DF6B3 /* car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBB02161ACA2004DF6B3 /* car1.png */; };
-		8C43EBB52161AD13004DF6B3 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBB42161AD13004DF6B3 /* car.png */; };
-		8C43EBB72161BBAB004DF6B3 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBB62161BBAB004DF6B3 /* cloud.png */; };
-		8C43EBBA2161BD3C004DF6B3 /* car21.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBB82161BD3C004DF6B3 /* car21.png */; };
-		8C43EBBB2161BD3C004DF6B3 /* car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBB92161BD3C004DF6B3 /* car2.png */; };
+		8C43EBC12161C16E004DF6B3 /* car21.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBBC2161C16D004DF6B3 /* car21.png */; };
+		8C43EBC22161C16E004DF6B3 /* car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBBD2161C16D004DF6B3 /* car1.png */; };
+		8C43EBC32161C16E004DF6B3 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBBE2161C16D004DF6B3 /* car.png */; };
+		8C43EBC42161C16E004DF6B3 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBBF2161C16D004DF6B3 /* cloud.png */; };
+		8C43EBC52161C16E004DF6B3 /* car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C43EBC02161C16D004DF6B3 /* car2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +47,11 @@
 		6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		6DEF23BF1B96CC2600BCE792 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		6DEF23C01B96CC2600BCE792 /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
-		8C43EBB02161ACA2004DF6B3 /* car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car1.png; path = ../../../../car1.png; sourceTree = "<group>"; };
-		8C43EBB42161AD13004DF6B3 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car.png; path = ../../../../car.png; sourceTree = "<group>"; };
-		8C43EBB62161BBAB004DF6B3 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = ../../../../cloud.png; sourceTree = "<group>"; };
-		8C43EBB82161BD3C004DF6B3 /* car21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car21.png; path = ../../../../car21.png; sourceTree = "<group>"; };
-		8C43EBB92161BD3C004DF6B3 /* car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car2.png; path = ../../../../car2.png; sourceTree = "<group>"; };
+		8C43EBBC2161C16D004DF6B3 /* car21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car21.png; sourceTree = "<group>"; };
+		8C43EBBD2161C16D004DF6B3 /* car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car1.png; sourceTree = "<group>"; };
+		8C43EBBE2161C16D004DF6B3 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		8C43EBBF2161C16D004DF6B3 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		8C43EBC02161C16D004DF6B3 /* car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +131,11 @@
 		6D5A86E119AE5CAA0066C1FD /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				8C43EBB02161ACA2004DF6B3 /* car1.png */,
-				8C43EBB92161BD3C004DF6B3 /* car2.png */,
-				8C43EBB82161BD3C004DF6B3 /* car21.png */,
-				8C43EBB62161BBAB004DF6B3 /* cloud.png */,
-				8C43EBB42161AD13004DF6B3 /* car.png */,
+				8C43EBBE2161C16D004DF6B3 /* car.png */,
+				8C43EBBD2161C16D004DF6B3 /* car1.png */,
+				8C43EBC02161C16D004DF6B3 /* car2.png */,
+				8C43EBBC2161C16D004DF6B3 /* car21.png */,
+				8C43EBBF2161C16D004DF6B3 /* cloud.png */,
 				6DEF23BB1B96CC2600BCE792 /* fragment.glsl */,
 				6DE9D2F01BA6AB8C002D599C /* fragment_textured.glsl */,
 				6DC707691BA7273500225B7D /* vertex_textured.glsl */,
@@ -200,18 +200,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C43EBB52161AD13004DF6B3 /* car.png in Resources */,
 				6D5A86B819AE5C710066C1FD /* InfoPlist.strings in Resources */,
 				6DEF23C11B96CC2600BCE792 /* fragment.glsl in Resources */,
-				8C43EBB12161ACA3004DF6B3 /* car1.png in Resources */,
-				8C43EBBA2161BD3C004DF6B3 /* car21.png in Resources */,
+				8C43EBC32161C16E004DF6B3 /* car.png in Resources */,
+				8C43EBC22161C16E004DF6B3 /* car1.png in Resources */,
 				6DE9D2F11BA6AB8C002D599C /* fragment_textured.glsl in Resources */,
+				8C43EBC42161C16E004DF6B3 /* cloud.png in Resources */,
 				6D5A86C619AE5C710066C1FD /* Images.xcassets in Resources */,
 				6D5A86BE19AE5C710066C1FD /* Credits.rtf in Resources */,
-				8C43EBBB2161BD3C004DF6B3 /* car2.png in Resources */,
-				8C43EBB72161BBAB004DF6B3 /* cloud.png in Resources */,
+				8C43EBC12161C16E004DF6B3 /* car21.png in Resources */,
 				6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */,
 				6DC7076A1BA7273500225B7D /* vertex_textured.glsl in Resources */,
+				8C43EBC52161C16E004DF6B3 /* car2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
