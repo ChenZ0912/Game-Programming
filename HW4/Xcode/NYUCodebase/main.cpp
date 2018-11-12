@@ -347,9 +347,6 @@ void Render(ShaderProgram& program, Entity& player, vector<Entity> platforms){
     }
 }
 
-void cleanup(){
-    SDL_Quit();
-}
 
 int main(int argc, char *argv[])
 {
@@ -428,6 +425,6 @@ int main(int argc, char *argv[])
         SDL_GL_SwapWindow(displayWindow);
     }
     
-    cleanup();
+    SDL_Quit();
     return 0;
 }
