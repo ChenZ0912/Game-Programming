@@ -9,10 +9,13 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>NYUCodebase.xcscheme_^#shared#^_</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>6D5A86A919AE5C710066C1FD</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
