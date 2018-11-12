@@ -28,9 +28,7 @@ using namespace std;
 // 60 FPS (1.0f/60.0f) (update sixty times a second)
 #define FIXED_TIMESTEP 0.0166666f
 #define MAX_TIMESTEPS 6
-#define SPRITE_COUNT_X 16
-#define SPRITE_COUNT_Y 8
-#define TILE_SIZE 16.0f
+
 enum EntityType{ENTITY_PLAYER, ENTITY_STATIC, ENTITY_MONSTER, ENTITY_FLAG};
 
 class SheetSprite{
