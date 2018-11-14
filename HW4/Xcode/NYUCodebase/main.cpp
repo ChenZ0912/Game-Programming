@@ -4,9 +4,11 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include "ShaderProgram.h"
 #include "glm/mat4x4.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -28,6 +30,9 @@ using namespace std;
 // 60 FPS (1.0f/60.0f) (update sixty times a second)
 #define FIXED_TIMESTEP 0.0166666f
 #define MAX_TIMESTEPS 6
+
+Mix_Chunk* jump1;
+Mix_Chunk* jump2;
 
 enum EntityType{ENTITY_PLAYER, ENTITY_STATIC, ENTITY_MONSTER, ENTITY_FLAG};
 
@@ -121,9 +126,9 @@ void Entity::UpdateX(float elapsed){
             const Uint8 *keys = SDL_GetKeyboardState(NULL);
             acceleration.x = 0.0f;
             if(keys[SDL_SCANCODE_RIGHT]){
-                acceleration.x = 3.0f;
+                acceleration.x = 7.0f;
             }else if(keys[SDL_SCANCODE_LEFT]){
-                acceleration.x = -3.0f;
+                acceleration.x = -7.0f;
             }
             velocity.x = lerp(velocity.x, 0.0f, elapsed * 2.0f);
             velocity.x += acceleration.x * elapsed;
@@ -143,7 +148,7 @@ void Entity::UpdateY(float elapsed) {
         }
     }
     else if(entityType == ENTITY_PLAYER){
-        acceleration.y = -2.0f;
+        acceleration.y = -5.0f;
         
         velocity.y += acceleration.y * elapsed;
         position.y += velocity.y * elapsed;
@@ -186,7 +191,7 @@ void Entity::Render(ShaderProgram& program, Entity& player){
 
 void Entity::jump() {
     if (collidedBottom) {
-        velocity.y = 3.0f;
+        velocity.y = 4.0f;
     }
 }
 
@@ -211,10 +216,10 @@ bool Entity::collisionX(Entity& entity){
         if(entity.entityType == ENTITY_STATIC){
             double Xpenetration = fabs(distance_X - radius1_X - radius2_X);
             if(position.x > entity.position.x){
-                position.x = position.x + Xpenetration + 0.001f;
+                position.x = position.x + Xpenetration + 0.00001f;
                 collidedLeft = true;
             }else{
-                position.x = position.x - Xpenetration - 0.001f;
+                position.x = position.x - Xpenetration - 0.00001f;
                 collidedRight = true;
             }
             
@@ -253,6 +258,7 @@ bool Entity::collisionY(Entity& entity){
                 position.y = position.y + Ypenetration + 0.001f;
                 collidedBottom = true;
                 jump();
+                Mix_PlayChannel(-1, jump2, 0);
                 entity.draw = false;
             }else{
                 position.y = position.y - Ypenetration - 0.001f;
@@ -293,6 +299,9 @@ void Setup(ShaderProgram& program){
     displayWindow = SDL_CreateWindow("My Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
+    Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 );
+    jump1 = Mix_LoadWAV(RESOURCE_FOLDER"jump1.wav");
+    jump2 = Mix_LoadWAV(RESOURCE_FOLDER"jump2.wav");
 #ifdef _WINDOWS
     glewInit();
 #endif
@@ -310,8 +319,9 @@ void Run(SDL_Event* event, bool& done, Entity& player){
         if (event->type == SDL_QUIT || event->type == SDL_WINDOWEVENT_CLOSE) {
             done = true;
         }else if(event->type == SDL_KEYDOWN){
-            if(event->key.keysym.scancode == SDL_SCANCODE_SPACE){
+            if(event->key.keysym.scancode == SDL_SCANCODE_SPACE && player.collidedBottom){
                 player.jump();
+                Mix_PlayChannel(-1, jump1, 0);
             }
         }
     }
@@ -373,13 +383,13 @@ int main(int argc, char *argv[])
         if (i == 3) {
             Entity monster(monsterSheet, posX, posY, 4.0f, 2.0f, 0.0f, 1.0f, 0.0f, 5.0f, ENTITY_MONSTER);
             platforms.push_back(monster);
-            posX += monster.size.x + 0.5;
+            posX += monster.size.x * 2 + 0.5;
             posY += monster.size.y * 2;
         }
         else {
             Entity ground(platformSheet, posX, posY, 1.5f, 1.5f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
             platforms.push_back(ground);
-            posX += ground.size.x + 0.1;
+            posX += ground.size.x * 2 + 0.5;
             posY += ground.size.y * 2;
         }
     }
@@ -387,11 +397,11 @@ int main(int argc, char *argv[])
     for (size_t i = 0; i < 10; i++) {
         Entity ground(platformSheet, posX, posY, 1.5f, 1.5f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
         platforms.push_back(ground);
-        posX += ground.size.x + 0.5;
+        posX += ground.size.x * 2 + 0.5;
         posY -= ground.size.y * 2;
     }
     
-    Entity flag(flagSheet, posX + 0.3, -1.0f, 1.5f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_FLAG);
+    Entity flag(flagSheet, posX + 0.3, -1.7f, 1.5f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_FLAG);
     platforms.push_back(flag);
     
     SDL_Event event;

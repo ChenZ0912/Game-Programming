@@ -24,6 +24,9 @@
 		8C4C3CBC2199301C00C17810 /* planes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3CBB2199301C00C17810 /* planes.png */; };
 		8C4C3CBE2199305500C17810 /* spritesheet_aliens.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3CBD2199305500C17810 /* spritesheet_aliens.png */; };
 		8C4C3CC0219930DD00C17810 /* spritesheet_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3CBF219930DD00C17810 /* spritesheet_tiles.png */; };
+		8CA3DCA6219BCB56001E530A /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA3DCA5219BCB55001E530A /* SDL2_mixer.framework */; };
+		8CA3DCA9219BCDF1001E530A /* jump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CA3DCA7219BCDF1001E530A /* jump1.wav */; };
+		8CA3DCAA219BCDF1001E530A /* jump2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CA3DCA8219BCDF1001E530A /* jump2.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		8C4C3CBB2199301C00C17810 /* planes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planes.png; sourceTree = "<group>"; };
 		8C4C3CBD2199305500C17810 /* spritesheet_aliens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet_aliens.png; sourceTree = "<group>"; };
 		8C4C3CBF219930DD00C17810 /* spritesheet_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet_tiles.png; sourceTree = "<group>"; };
+		8CA3DCA5219BCB55001E530A /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = NYUCodebase/SDL2_mixer.framework; sourceTree = "<group>"; };
+		8CA3DCA7219BCDF1001E530A /* jump1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump1.wav; sourceTree = "<group>"; };
+		8CA3DCA8219BCDF1001E530A /* jump2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D5AC2D019AE6280004CB1BF /* OpenGL.framework in Frameworks */,
+				8CA3DCA6219BCB56001E530A /* SDL2_mixer.framework in Frameworks */,
 				6D5A86AE19AE5C710066C1FD /* Cocoa.framework in Frameworks */,
 				6D5A86E319AE5CD10066C1FD /* SDL2.framework in Frameworks */,
 				6D5AC2D219AE6A1E004CB1BF /* SDL2_image.framework in Frameworks */,
@@ -87,6 +94,7 @@
 		6D5A86AC19AE5C710066C1FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CA3DCA5219BCB55001E530A /* SDL2_mixer.framework */,
 				6D5AC2D119AE6A1E004CB1BF /* SDL2_image.framework */,
 				6D5AC2CF19AE6280004CB1BF /* OpenGL.framework */,
 				6D5A86E219AE5CD10066C1FD /* SDL2.framework */,
@@ -133,6 +141,8 @@
 				6DE9D2F01BA6AB8C002D599C /* fragment_textured.glsl */,
 				6DC707691BA7273500225B7D /* vertex_textured.glsl */,
 				6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */,
+				8CA3DCA7219BCDF1001E530A /* jump1.wav */,
+				8CA3DCA8219BCDF1001E530A /* jump2.wav */,
 				6DEF23BF1B96CC2600BCE792 /* ShaderProgram.h */,
 				8C4C3CB921992FE900C17810 /* sheet.png */,
 				8C4C3CBD2199305500C17810 /* spritesheet_aliens.png */,
@@ -203,6 +213,8 @@
 				8C4C3CBC2199301C00C17810 /* planes.png in Resources */,
 				8C4C3CBA21992FE900C17810 /* sheet.png in Resources */,
 				6DE9D2F11BA6AB8C002D599C /* fragment_textured.glsl in Resources */,
+				8CA3DCAA219BCDF1001E530A /* jump2.wav in Resources */,
+				8CA3DCA9219BCDF1001E530A /* jump1.wav in Resources */,
 				6D5A86C619AE5C710066C1FD /* Images.xcassets in Resources */,
 				6D5A86BE19AE5C710066C1FD /* Credits.rtf in Resources */,
 				6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */,
@@ -323,6 +335,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)/NYUCodebase",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)/NYUCodebase",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -331,6 +349,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Library/Frameworks/SDL2_image.framework/Versions/A/Headers,
 					/Library/Frameworks/SDL2.framework/Versions/A/Headers,
+					/Library/Frameworks/SDL2_mixer.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "NYUCodebase/NYUCodebase-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +365,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)/NYUCodebase",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -354,6 +374,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Library/Frameworks/SDL2_image.framework/Versions/A/Headers,
 					/Library/Frameworks/SDL2.framework/Versions/A/Headers,
+					/Library/Frameworks/SDL2_mixer.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "NYUCodebase/NYUCodebase-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
