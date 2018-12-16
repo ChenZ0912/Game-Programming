@@ -17,8 +17,8 @@ Entity::Entity(){};
 Entity::Entity(const SheetSprite& sprite, float positionX, float positionY, float sizeX, float sizeY, float velocityX, float velocityY, float accelerationX, float accelerationY, EntityType entityType):sprite(sprite), position(positionX, positionY, 0.0f), size(sizeX * sprite.size * sprite.width/sprite.height, sizeY*sprite.size, 0.0f), velocity(velocityX, velocityY, 0.0f), acceleration(accelerationX, accelerationY, 0.0f), entityType(entityType), collidedTop(false), collidedBottom(false), collidedLeft(false),
 collidedRight(false), turnedBack(false), animationElapsed(0.0f), index(0){
     
-    screamSound = Mix_LoadWAV("scream.wav");
-    lolSound = Mix_LoadWAV("lol.wav");
+    screamSound = Mix_LoadWAV("Air Horn-SoundBible.com-964603082.wav");
+    laughSound = Mix_LoadWAV("lol.wav");
     
 };
 

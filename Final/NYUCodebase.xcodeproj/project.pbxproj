@@ -55,6 +55,7 @@
 		8C14F88021C623AB009C81B7 /* p2_walk04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F87521C623AB009C81B7 /* p2_walk04.png */; };
 		8C14F88121C623AB009C81B7 /* p2_walk03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F87621C623AB009C81B7 /* p2_walk03.png */; };
 		8C14F88321C626E4009C81B7 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C14F88221C626E4009C81B7 /* SDL2_mixer.framework */; };
+		8C14F88521C62B1D009C81B7 /* Air Horn-SoundBible.com-964603082.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F88421C62B1D009C81B7 /* Air Horn-SoundBible.com-964603082.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		8C14F87521C623AB009C81B7 /* p2_walk04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2_walk04.png; sourceTree = "<group>"; };
 		8C14F87621C623AB009C81B7 /* p2_walk03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2_walk03.png; sourceTree = "<group>"; };
 		8C14F88221C626E4009C81B7 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = "/Users/zhouchen/Desktop/finalProject/Game-Programming/Final/NYUCodebase/SDL2_mixer.framework"; sourceTree = "<absolute>"; };
+		8C14F88421C62B1D009C81B7 /* Air Horn-SoundBible.com-964603082.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Air Horn-SoundBible.com-964603082.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				8C14F87421C623AA009C81B7 /* p2_walk09.png */,
 				8C14F87021C623AA009C81B7 /* p2_walk10.png */,
 				8C14F87121C623AA009C81B7 /* p2_walk11.png */,
+				8C14F88421C62B1D009C81B7 /* Air Horn-SoundBible.com-964603082.wav */,
 				8C14F7DC21C4DB2F009C81B7 /* fragment_textured.glsl */,
 				8C14F7D821C4DB2F009C81B7 /* fragment.glsl */,
 				8C14F7FC21C4DB34009C81B7 /* itemSpriteSheet.png */,
@@ -313,6 +316,7 @@
 				8C14F86121C62391009C81B7 /* bg_grasslands.png in Resources */,
 				8C14F83521C4DB34009C81B7 /* itemSpriteSheet.png in Resources */,
 				8C14F85B21C5CC44009C81B7 /* jump1.wav in Resources */,
+				8C14F88521C62B1D009C81B7 /* Air Horn-SoundBible.com-964603082.wav in Resources */,
 				8C14F86B21C623A0009C81B7 /* fire2.png in Resources */,
 				8C14F81721C4DB34009C81B7 /* fragment.glsl in Resources */,
 				6D5A86C619AE5C710066C1FD /* Images.xcassets in Resources */,

@@ -66,7 +66,7 @@ public:
     bool turnedBack;
     int robotNum;
     Mix_Chunk* screamSound;
-    Mix_Chunk* lolSound;
+    Mix_Chunk* laughSound;
     
 };
 
