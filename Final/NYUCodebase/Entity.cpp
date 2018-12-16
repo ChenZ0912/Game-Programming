@@ -207,7 +207,7 @@ void Entity::draw(ShaderProgram* program, GLuint textureID){
 
 void Entity::animate(ShaderProgram* program, float elapsed){
     if(entityType == ENTITY_PLAYER){
-        const int numFrames = 2;
+        const int numFrames = 11;
         float framesPerSecond = 10.0f;
         
         animationElapsed += elapsed;

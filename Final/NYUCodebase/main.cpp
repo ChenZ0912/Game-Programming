@@ -243,7 +243,7 @@ public:
     float endSize = 0.0f;
     glm::vec3 position;
     float gravity;
-    GLuint fartTexture = LoadTexture(RESOURCE_FOLDER"fart07.png");
+    GLuint fartTexture = LoadTexture(RESOURCE_FOLDER"fire2.png");
 
     float maxLifetime;
     std::vector<Particle> particles;
@@ -346,9 +346,6 @@ public:
         boxCoinTexture = LoadTexture(RESOURCE_FOLDER"boxCoin.png");
         coinTexture = LoadTexture(RESOURCE_FOLDER"itemSpriteSheet.png");
         
-        walk1 = LoadTexture(RESOURCE_FOLDER"alienBlue_walk1.png");
-        walk2 = LoadTexture(RESOURCE_FOLDER"alienBlue_walk2.png");
-        
         EasyLevel = LoadTexture(RESOURCE_FOLDER"bg_desert.png");
         MediumLevel = LoadTexture(RESOURCE_FOLDER"bg_grasslands.png");
         HardLevel = LoadTexture(RESOURCE_FOLDER"bg_shroom.png");
@@ -383,9 +380,22 @@ public:
         
         player.standTextureID = player_stand;
         player.jumpTextureID = player_jump;
-
-        player.move.push_back(walk1);
-        player.move.push_back(walk2);
+        
+        for (char i = 1; i <= 11; i++) {
+            if (i < 10) {
+                char file[80];
+                sprintf(file, RESOURCE_FOLDER"p2_walk0%d.png", i);
+                GLuint walk = LoadTexture(file);
+                player.move.push_back(walk);
+            }
+            else {
+                char file[80];
+                sprintf(file, RESOURCE_FOLDER"p2_walk%d.png", i);
+                GLuint walk = LoadTexture(file);
+                player.move.push_back(walk);
+            }
+            
+        }
         
         int d = 1;
         for (Entity* robot : robots) {
