@@ -414,26 +414,26 @@ public:
             
             
             float posX = -1.5f;
-            float posY = -1.8f;
+            float posY = -1.7f;
             
             for (size_t i = 0; i < 5; i++){
-                Entity* newWoodPtr = new Entity(platformSheet, posX, posY, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
-                newWoodPtr->boxCoin_disabledTextureID = boxCoin_disabledTexture;
-                newWoodPtr->boxCoinTextureID = boxCoinTexture;
-                platforms.push_back(newWoodPtr);
+                Entity* platformPtr = new Entity(platformSheet, posX, posY, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
+                platformPtr->boxCoin_disabledTextureID = boxCoin_disabledTexture;
+                platformPtr->boxCoinTextureID = boxCoinTexture;
+                platforms.push_back(platformPtr);
                 posX += 0.8f;
                 posY += 0.7f;
             }
         }else if(level_num == 2){
             
-            coin.position.x = -1.3f;
+            coin.position.x = -2.5f;
             coin.position.y = 0.25f;
             
             Entity* platform1 = new Entity(platformSheet, -1.0f, -1.3f, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
             platforms.push_back(platform1);
             Entity* platform2 = new Entity(platformSheet, 0.9f, -0.35f, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
             platforms.push_back(platform2);
-            Entity* platform3 = new Entity(platformSheet, -1.0f, 1.0f, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
+            Entity* platform3 = new Entity(platformSheet, -1.0f, 0.6f, 2.5f, 2.0f, 0.0f, 0.0f, 0.0f, 0.0f, ENTITY_STATIC);
             platforms.push_back(platform3);
             
             for(Entity* platformPtr:platforms){
@@ -442,10 +442,9 @@ public:
             }
             
         }else if(level_num == 3){
-            robots[0]->acceleration.x = -5.0f;
-            robots[1]->acceleration.x = -5.0f;
-            robots[2]->acceleration.x = -5.0f;
-            robots[3]->acceleration.x = -5.0f;
+            for (Entity* robot : robots) {
+                robot->acceleration.x = -4.0f;
+            }
             
             coin.position.x = -3.0f;
             coin.position.y = 1.4f;
@@ -838,7 +837,7 @@ void renderLose(ShaderProgram* program, ShaderProgram* program_untextured, mainM
 void renderMenu(ShaderProgram* program, ShaderProgram* program_untextured, mainMenuState* menuState, float elapsed){
     light lights[4] = {*new light(-2.08, 0.3f), *new light(-0.28f, 0.3f), *new light(1.57f, 0.3f), *new light(-0.8f,-0.8f)};
     program->SetLightPos(lights);
-    program->SetLightIntensity(1.0f);
+    program->SetLightIntensity(2.0f);
     drawBackground(program, menuState->menuTexture, NULL);
     
     glm::mat4 projectionMatrix = glm::mat4(1.0f);
