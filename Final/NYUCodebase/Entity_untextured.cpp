@@ -7,24 +7,6 @@
 //
 
 #include "Entity_untextured.h"
-
-float easeIn(float from, float to, float time) {
-    float tVal = time*time*time*time*time;
-    return (1.0f-tVal)*from + tVal*to;
-}
-
-
-float mapValue(float value, float srcMin, float srcMax, float dstMin, float dstMax) {
-    float retVal = dstMin + ((value - srcMin)/(srcMax-srcMin) * (dstMax-dstMin));
-    if(retVal < dstMin) {
-        retVal = dstMin;
-    }
-    if(retVal > dstMax) {
-        retVal = dstMax;
-    }
-    return retVal;
-}
-
 Entity_Untextured::Entity_Untextured(float positionX, float positionY, float sizeX, float sizeY):position(positionX, positionY, 0.0f), size(sizeX, sizeY,0.0f){};
 
 void Entity_Untextured::Draw(ShaderProgram* program){

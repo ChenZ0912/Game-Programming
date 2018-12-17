@@ -15,10 +15,6 @@ class ShaderProgram {
     public:
 	void Load(const char *vertexShaderFile, const char *fragmentShaderFile);
 	void Cleanup();   
-
-//  void SetModelMatrix(const glm::mat4 &matrix[0][0]);
-//        void SetProjectionMatrix(const Matrix &matrix);
-//        void SetViewMatrix(const Matrix &matrix);
     void SetModelMatrix(const glm::mat4 &matrix);
     void SetProjectionMatrix(const glm::mat4 &matrix);
     void SetViewMatrix(const glm::mat4 &matrix);

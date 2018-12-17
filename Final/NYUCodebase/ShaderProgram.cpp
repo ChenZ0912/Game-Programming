@@ -90,21 +90,6 @@ void ShaderProgram::SetColor(float r, float g, float b, float a) {
 	glUniform4f(colorUniform, r, g, b, a);
 }
 
-//void ShaderProgram::SetViewMatrix(const Matrix &matrix) {
-//    glUseProgram(programID);
-//    glUniformMatrix4fv(viewMatrixUniform, 1, GL_FALSE, matrix.ml);
-//}
-//
-//void ShaderProgram::SetModelMatrix(const Matrix &matrix) {
-//    glUseProgram(programID);
-//    glUniformMatrix4fv(modelMatrixUniform, 1, GL_FALSE, matrix.ml);
-//}
-//
-//void ShaderProgram::SetProjectionMatrix(const Matrix &matrix) {
-//    glUseProgram(programID);
-//    glUniformMatrix4fv(projectionMatrixUniform, 1, GL_FALSE, matrix.ml);
-//}
-
 void ShaderProgram::SetViewMatrix(const glm::mat4 &matrix) {
     glUseProgram(programID);
     glUniformMatrix4fv(viewMatrixUniform, 1, GL_FALSE, &matrix[0][0]);

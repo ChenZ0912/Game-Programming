@@ -8,7 +8,6 @@
 
 #include "Entity.h"
 
-
 float lerp(float v0, float v1, float t);
 
 
@@ -155,7 +154,6 @@ void Entity::Render(ShaderProgram* program, Entity* player, float elapsed){
             if(keys[SDL_SCANCODE_RIGHT]){
                 animate(program, elapsed);
             }else if(keys[SDL_SCANCODE_LEFT]){
-//                modelMatrix.Scale(-1.0f, 1.0f, 1.0f);
                 modelMatrix = glm::scale(modelMatrix, glm::vec3(-1.0f, 1.0f, 1.0f));
                 program->SetModelMatrix(modelMatrix);
                 animate(program, elapsed);
@@ -175,10 +173,8 @@ void Entity::Render(ShaderProgram* program, Entity* player, float elapsed){
     }else if (entityType == ENTITY_COIN){
         sprite.Draw(program);
     }else if (entityType == ENTITY_ENEMY){
-//            modelMatrix.Scale(-1.0f, 1.0f, 1.0f);
         modelMatrix = glm::scale(modelMatrix, glm::vec3(-1.0f, 1.0f, 1.0f));
             if(turnedBack){
-//                modelMatrix.Scale(1.0f, 1.0f, 1.0f);
                 modelMatrix = glm::scale(modelMatrix, glm::vec3(1.0f, 1.0f, 1.0f));
             }
         
@@ -211,11 +207,10 @@ void Entity::animate(ShaderProgram* program, float elapsed){
         float framesPerSecond = 10.0f;
         
         animationElapsed += elapsed;
-        
         if(animationElapsed >= 1.0/framesPerSecond){
             index++;
             animationElapsed = 0.0;
-            
+
             if(index > numFrames-1){
                 index = 0;
             }

@@ -27,18 +27,6 @@ void SheetSprite::Draw(ShaderProgram *program) const {
             u+width, v+height
         };
         
-        
-        //        float aspect = width / height;
-        //        float vertices[] = {
-        //            -0.5f * size * aspect, -0.5f * size,
-        //            0.5f * size * aspect, 0.5f * size,
-        //            -0.5f * size * aspect, 0.5f * size,
-        //            0.5f * size * aspect, 0.5f * size,
-        //            -0.5f * size * aspect, -0.5f * size ,
-        //            0.5f * size * aspect, -0.5f * size};
-        
-        //        float aspect = width / height;
-        
         float vertices[] = {
             -0.5f , -0.5f,
             0.5f, 0.5f ,
